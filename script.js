@@ -1,7 +1,7 @@
 let listings = [];
 
 async function fetchListings() {
-  const response = await fetch('http://localhost:5000/api/listings');
+  const response = await fetch('https://emptycupback.onrender.com/api/listings');
   listings = await response.json(); 
   renderListings();
 }
@@ -74,7 +74,7 @@ function renderListings() {
 
 async function toggleShortlist(id) {
   try {
-    const res = await fetch(`http://127.0.0.1:5000/api/toggle-shortlist/${id}`, {
+    const res = await fetch(`https://emptycupback.onrender.com/api/toggle-shortlist/${id}`, {
       method: 'POST',
     });
     const data = await res.json();
